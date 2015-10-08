@@ -85,13 +85,13 @@ case "$1" in
 	exit -1
 	;;
 
-"emulator"|"emulator-jb"|"emulator-kk"|"emulator-l")
+"emulator"|"emulator-jb"|"emulator-kk"|"emulator-l"|"emulator-m")
 	echo DEVICE=generic >> .tmp-config &&
 	echo LUNCH=full-eng >> .tmp-config &&
 	repo_sync $1
 	;;
 
-"emulator-x86"|"emulator-x86-jb"|"emulator-x86-kk"|"emulator-x86-l")
+"emulator-x86"|"emulator-x86-jb"|"emulator-x86-kk"|"emulator-x86-l"|"emulator-x86-m")
 	echo DEVICE=generic_x86 >> .tmp-config &&
 	echo LUNCH=full_x86-eng >> .tmp-config &&
 	repo_sync $1
@@ -213,6 +213,10 @@ case "$1" in
 	echo "- seagull-l   (T3 L)"
 	echo "- eagle-l     (M2 L)"
 	echo "- flamingo-l  (E3 L)"
+	echo
+	echo "$(tput setaf 2)$(tput bold)* AOSP Marshmallow base$(tput sgr 0)"
+	echo - emulator-m
+	echo - emulator-x86-m
 	echo ""
 	echo "$(tput bold)* Base for porting CyanogenMod devices$(tput sgr 0)"
 	echo "- cm-porting"
