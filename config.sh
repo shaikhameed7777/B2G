@@ -191,6 +191,11 @@ case "$1" in
 	repo_sync sony-aosp-l
 	;;
 
+"cm-porting")
+	echo PRODUCT_NAME=$1 >> .tmp-config &&
+	repo_sync base-l-cm
+	;;
+
 *)
 	echo "Usage: $0 [-cdflnq] [-j <jobs>] [--force-sync] (device name)"
 	echo "Flags are passed through to |./repo sync|."
@@ -240,6 +245,9 @@ case "$1" in
 	echo - tianchi-l "(T2U L)"
 	echo - flamingo-l "(E3 L)"
 	echo - eagle-l "(M2 L)"
+	echo
+	echo Base for porting CyanogenMod devices:
+	echo - cm-porting
 	exit -1
 	;;
 esac
