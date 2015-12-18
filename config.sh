@@ -30,8 +30,8 @@ case `uname` in
 	exit -1
 esac
 
-GITREPO=${GITREPO:-"git://github.com/mozilla-b2g/b2g-manifest"}
-BRANCH=${BRANCH:-master}
+GITREPO=${GITREPO:-"git://github.com/cm-b2g/b2g-manifest"}
+BRANCH=${BRANCH:-b2g/cm-12.1-YOG7D}
 
 while [ $# -ge 1 ]; do
 	case $1 in
@@ -149,6 +149,16 @@ case "$1" in
 	repo_sync sony-aosp-l
 	;;
 
+"leo-l-cm"|"aries-l-cm"|"scorpion-l-cm"|"sirius-l-cm"|"honami-l-cm"|"amami-l-cm"|"tianchi-l-cm"|"seagull-cm"|"eagle-cm"|"flamingo-l-cm")
+	echo PRODUCT_NAME=$1 | sed 's/.....$//' >> .tmp-config &&
+	repo_sync sony-cm-l
+	;;
+
+"cm-porting")
+	echo PRODUCT_NAME=$1 >> .tmp-config &&
+	repo_sync base-l-cm
+	;;
+
 *)
 	echo "Usage: $0 [-cdflnq] [-j <jobs>] [--force-sync] (device name)"
 	echo "Flags are passed through to |./repo sync|."
@@ -193,6 +203,21 @@ case "$1" in
 	echo "- seagull-l   (T3 L)"
 	echo "- eagle-l     (M2 L)"
 	echo "- flamingo-l  (E3 L)"
+	echo
+	echo "$(tput setaf 6)$(tput bold)* Sony Xperia devices on CyanogenMod$(tput sgr 0)"
+	echo "- $(tput setaf 6)leo-l-cm$(tput sgr 0)      (Z3 CM+)"
+	echo "- $(tput setaf 6)aries-l-cm$(tput sgr 0)    (Z3 Compact CM+)"
+	echo "- $(tput setaf 6)scorpion-l-cm$(tput sgr 0) (Z3 Tablet Compact CM+)"
+	echo "- $(tput setaf 6)sirius-l-cm$(tput sgr 0)   (Z2 CM+)"
+	echo "- $(tput setaf 6)honami-l-cm$(tput sgr 0)   (Z1 CM+)"
+	echo "- $(tput setaf 6)amami-l-cm$(tput sgr 0)    (Z1 Compact CM+)"
+	echo "- $(tput setaf 6)tianchi-l-cm$(tput sgr 0)  (T2 Ultra CM+)"
+	echo "- $(tput setaf 6)seagull-l-cm$(tput sgr 0)  (T3 CM+)"
+	echo "- $(tput setaf 6)eagle-l-cm$(tput sgr 0)    (M2 CM+)"
+	echo "- $(tput setaf 6)flamingo-l-cm$(tput sgr 0) (E3 CM+)"
+	echo ""
+	echo "$(tput bold)* Base for porting CyanogenMod devices$(tput sgr 0)"
+	echo "- cm-porting"
 	exit -1
 	;;
 esac
