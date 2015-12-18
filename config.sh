@@ -159,6 +159,11 @@ case "$1" in
 	repo_sync base-l-cm
 	;;
 
+"crackling-l-cm")
+	echo PRODUCT_NAME=full_$1 | sed 's/.....$//' >> .tmp-config &&
+	repo_sync wileyfox
+	;;
+
 *)
 	echo "Usage: $0 [-cdflnq] [-j <jobs>] [--force-sync] (device name)"
 	echo "Flags are passed through to |./repo sync|."
@@ -203,6 +208,9 @@ case "$1" in
 	echo "- seagull-l   (T3 L)"
 	echo "- eagle-l     (M2 L)"
 	echo "- flamingo-l  (E3 L)"
+	echo ""
+	echo "$(tput bold)* Base for porting CyanogenMod devices$(tput sgr 0)"
+	echo "- cm-porting"
 	echo
 	echo "$(tput setaf 6)$(tput bold)* Sony Xperia devices on CyanogenMod$(tput sgr 0)"
 	echo "- $(tput setaf 6)leo-l-cm$(tput sgr 0)      (Z3 CM+)"
@@ -216,8 +224,8 @@ case "$1" in
 	echo "- $(tput setaf 6)eagle-l-cm$(tput sgr 0)    (M2 CM+)"
 	echo "- $(tput setaf 6)flamingo-l-cm$(tput sgr 0) (E3 CM+)"
 	echo ""
-	echo "$(tput bold)* Base for porting CyanogenMod devices$(tput sgr 0)"
-	echo "- cm-porting"
+	echo "$(tput setaf 6)$(tput bold)* Official CyanogenMod devices$(tput sgr 0)"
+	echo "- $(tput setaf 6)crackling-l-cm$(tput sgr 0)  (Wileyfox Swift)"
 	exit -1
 	;;
 esac
