@@ -144,12 +144,12 @@ case "$1" in
 	;;
 
 "crackling-l-cm")
-	echo PRODUCT_NAME=$1 | sed 's/.....$//' >> .tmp-config &&
+	echo PRODUCT_NAME=full_$1 | sed 's/.....$//' >> .tmp-config &&
 	repo_sync wileyfox
 	;;
 
 "tomato-l-cm")
-	echo PRODUCT_NAME=$1 | sed 's/.....$//' >> .tmp-config &&
+	echo PRODUCT_NAME=full_$1 | sed 's/.....$//' >> .tmp-config &&
 	repo_sync yu
 	;;
 
