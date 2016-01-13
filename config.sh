@@ -148,6 +148,11 @@ case "$1" in
 	repo_sync wileyfox
 	;;
 
+"tomato-l-cm")
+	echo PRODUCT_NAME=$1 | sed 's/.....$//' >> .tmp-config &&
+	repo_sync yu
+	;;
+
 *)
 	echo "Usage: $0 [-cdflnq] [-j <jobs>] [--force-sync] (device name)"
 	echo "Flags are passed through to |./repo sync|."
@@ -207,6 +212,7 @@ case "$1" in
 	echo ""
 	echo "$(tput setaf 6)$(tput bold)* Official CyanogenMod devices$(tput sgr 0)"
 	echo "- $(tput setaf 6)crackling-l-cm$(tput sgr 0)  (Wileyfox Swift)"
+	echo "- $(tput setaf 6)tomato-l-cm$(tput sgr 0)  (Yu Yureka)"
 	exit -1
 	;;
 esac
