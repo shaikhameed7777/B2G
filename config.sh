@@ -31,7 +31,7 @@ case `uname` in
 esac
 
 GITREPO=${GITREPO:-"git://github.com/cm-b2g/b2g-manifest"}
-BRANCH=${BRANCH:-b2g/cm-12.1-YOG7D}
+BRANCH=${BRANCH:-b2g/cm-13.0-ZNH0E}
 
 while [ $# -ge 1 ]; do
 	case $1 in
@@ -149,22 +149,22 @@ case "$1" in
 	repo_sync sony-aosp-l
 	;;
 
-"leo-l-cm"|"aries-l-cm"|"scorpion-l-cm"|"sirius-l-cm"|"honami-l-cm"|"amami-l-cm"|"tianchi-l-cm"|"seagull-cm"|"eagle-cm"|"flamingo-l-cm")
-	echo PRODUCT_NAME=$1 | sed 's/.....$//' >> .tmp-config &&
-	repo_sync sony-cm-l
-	;;
-
 "cm-porting")
 	echo PRODUCT_NAME=$1 >> .tmp-config &&
-	repo_sync base-l-cm
+	repo_sync base-m-cm
 	;;
 
-"crackling-l-cm")
+"leo-m-cm"|"aries-m-cm"|"scorpion-m-cm"|"sirius-m-cm"|"honami-m-cm"|"amami-m-cm"|"tianchi-m-cm"|"seagull-m-cm"|"eagle-m-cm"|"flamingo-m-cm")
+	echo PRODUCT_NAME=$1 | sed 's/.....$//' >> .tmp-config &&
+	repo_sync sony-cm-m
+	;;
+
+"crackling-m-cm")
 	echo PRODUCT_NAME=full_$1 | sed 's/.....$//' >> .tmp-config &&
 	repo_sync wileyfox
 	;;
 
-"tomato-l-cm")
+"tomato-m-cm")
 	echo PRODUCT_NAME=full_$1 | sed 's/.....$//' >> .tmp-config &&
 	repo_sync yu
 	;;
@@ -222,20 +222,20 @@ case "$1" in
 	echo "- cm-porting"
 	echo
 	echo "$(tput setaf 6)$(tput bold)* Sony Xperia devices on CyanogenMod$(tput sgr 0)"
-	echo "- $(tput setaf 6)leo-l-cm$(tput sgr 0)      (Z3 CM+)"
-	echo "- $(tput setaf 6)aries-l-cm$(tput sgr 0)    (Z3 Compact CM+)"
-	echo "- $(tput setaf 6)scorpion-l-cm$(tput sgr 0) (Z3 Tablet Compact CM+)"
-	echo "- $(tput setaf 6)sirius-l-cm$(tput sgr 0)   (Z2 CM+)"
-	echo "- $(tput setaf 6)honami-l-cm$(tput sgr 0)   (Z1 CM+)"
-	echo "- $(tput setaf 6)amami-l-cm$(tput sgr 0)    (Z1 Compact CM+)"
-	echo "- $(tput setaf 6)tianchi-l-cm$(tput sgr 0)  (T2 Ultra CM+)"
-	echo "- $(tput setaf 6)seagull-l-cm$(tput sgr 0)  (T3 CM+)"
-	echo "- $(tput setaf 6)eagle-l-cm$(tput sgr 0)    (M2 CM+)"
-	echo "- $(tput setaf 6)flamingo-l-cm$(tput sgr 0) (E3 CM+)"
+	echo "- $(tput setaf 6)leo-m-cm$(tput sgr 0)      (Z3 CM+)"
+	echo "- $(tput setaf 6)aries-m-cm$(tput sgr 0)    (Z3 Compact CM+)"
+	echo "- $(tput setaf 6)scorpion-m-cm$(tput sgr 0) (Z3 Tablet Compact CM+)"
+	echo "- $(tput setaf 6)sirius-m-cm$(tput sgr 0)   (Z2 CM+)"
+	echo "- $(tput setaf 6)honami-m-cm$(tput sgr 0)   (Z1 CM+)"
+	echo "- $(tput setaf 6)amami-m-cm$(tput sgr 0)    (Z1 Compact CM+)"
+	echo "- $(tput setaf 6)tianchi-m-cm$(tput sgr 0)  (T2 Ultra CM+)"
+	echo "- $(tput setaf 6)seagull-m-cm$(tput sgr 0)  (T3 CM+)"
+	echo "- $(tput setaf 6)eagle-m-cm$(tput sgr 0)    (M2 CM+)"
+	echo "- $(tput setaf 6)flamingo-m-cm$(tput sgr 0) (E3 CM+)"
 	echo ""
 	echo "$(tput setaf 6)$(tput bold)* Official CyanogenMod devices$(tput sgr 0)"
-	echo "- $(tput setaf 6)crackling-l-cm$(tput sgr 0)  (Wileyfox Swift)"
-	echo "- $(tput setaf 6)tomato-l-cm$(tput sgr 0)  (Yu Yureka)"
+	echo "- $(tput setaf 6)crackling-m-cm$(tput sgr 0)  (Wileyfox Swift)"
+	echo "- $(tput setaf 6)tomato-m-cm$(tput sgr 0)  (Yu Yureka)"
 	exit -1
 	;;
 esac
