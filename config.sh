@@ -75,7 +75,7 @@ echo GECKO_OBJDIR=$PWD/objdir-gecko >> .tmp-config
 echo DEVICE_NAME=$1 >> .tmp-config
 
 case "$1" in
-"galaxy-s2"|"galaxy-nexus"|"nexus-s"|"nexus-s-4g"|"otoro"|"unagi"|"keon"|"inari"|"hamachi"|"peak"|"helix"|"wasabi"|"flatfish"|"tarako"|"pandaboard"|"rpi"|"vixen"|"flo"|"dolphin"|"dolphin-512")
+"galaxy-s2"|"galaxy-nexus"|"arubaslim"|"nexus-s"|"nexus-s-4g"|"otoro"|"unagi"|"keon"|"inari"|"hamachi"|"peak"|"helix"|"wasabi"|"flatfish"|"tarako"|"pandaboard"|"rpi"|"vixen"|"flo"|"dolphin"|"dolphin-512")
 	echo
 	echo "WARNING: You are trying to build a legacy device. Legacy devices are too old"
 	echo "for Gecko master branch or simply not maintained. If you wish to continue try:"
