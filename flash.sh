@@ -406,7 +406,7 @@ case "$DEVICE" in
 	flash_fastboot unlock $PROJECT
 	;;
 
-"galaxys2")
+"galaxys2"|"arubaslim")
 	flash_heimdall $PROJECT
 	;;
 
