@@ -79,6 +79,11 @@ case "$1" in
 	echo DEVICE=galaxys2 >> .tmp-config &&
 	repo_sync $1
 	;;
+	
+"arubaslim")
+	echo DEVICE=arubaslim >> .tmp-config &&
+	repo_sync $1
+	;;
 
 "galaxy-nexus")
 	echo DEVICE=maguro >> .tmp-config &&
